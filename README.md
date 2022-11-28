@@ -257,15 +257,16 @@ python3 visual.py output
 ## **Notes**
 
 ### The main.py script 
-* the script can be modified to accomodate the users needs.
+* The script can be modified to accomodate the users needs.
     * HOWEVER
         * If the user modified the cluster function to output more than the top 2 amino acids, which is the current script default function, they would need to adjust the visual.py script accordingly as well. 
         * User can modify this feature by modifying the first line within the ***def get_cluster_filenames*** in the 'main.py' script (line 518). 
+        * Replace n in num=n with the desire number of amino acids within the pairing. 
         
         ```
         def get_cluster_filenames(args, common_letters_list):
         
-            fmt_letters_list = list(map(lambda x : format_common_letters(x, num=2), common_letters_list))
+            fmt_letters_list = list(map(lambda x : format_common_letters(x, num=n), common_letters_list))
             clusters = []
             for ll in fmt_letters_list:
                 top_letters = list(map(lambda x: x[0], ll))
@@ -282,3 +283,20 @@ python3 visual.py output
         
         * Within the 'visual.py' script, user needs to modify the pair object accordingly to the n most ambundant amino acids specify within the 'main.py' script. The current default is two amino acids, which is specify as pair[0] and pair[1] within the 'visual.py' script.
 
+### The visual.py script
+* The size of the graph outputted by the 'visual.py' script can be change by modifyng the following line of code within the def draw() within the Network class:
+        ```
+        width = height = int(len(self.group_nodes) ** a) * b
+        ```
+        * Recommended sizing: 
+            * For Runs containing >50 LCR sub-sequence: a = 1.05, b = 120
+            * For Runs containing 50 < x < 100: a = 1.15, b = 120
+            * For Runs containing 100 < x < 150: a = 1.20, b = 125
+            * For Runs containing  x < 500: a = 1.40, b = 145 
+                                           
+* Font size for the text in the graphs can be modify by changing the number within the following line:
+          ```
+          font = ImageFont.truetype("assets/Roboto-Light.ttf", 30)      
+          ```
+                                              
+        
