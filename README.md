@@ -260,10 +260,11 @@ python3 visual.py output
 * the script can be modified to accomodate the users needs.
     * HOWEVER
         * If the user modified the cluster function to output more than the top 2 amino acids, which is the current script default function, they would need to adjust the visual.py script accordingly as well. 
-        * User can modify this feature by modifying the first line within the ***get_cluster_filenames*** function in the 'main.py' script. 
+        * User can modify this feature by modifying the first line within the ***def get_cluster_filenames*** in the 'main.py' script (line 518). 
         
         ```
         def get_cluster_filenames(args, common_letters_list):
+        
             fmt_letters_list = list(map(lambda x : format_common_letters(x, num=2), common_letters_list))
             clusters = []
             for ll in fmt_letters_list:
@@ -278,4 +279,6 @@ python3 visual.py output
             return f_clusters
 
         ```
+        
+        * Within the 'visual.py' script, user needs to modify the pair object accordingly to the n most ambundant amino acids specify within the 'main.py' script. The current default is two amino acids, which is specify as pair[0] and pair[1] within the 'visual.py' script.
 
