@@ -260,9 +260,22 @@ python3 visual.py output
 * the script can be modified to accomodate the users needs.
     * HOWEVER
         * If the user modified the cluster function to output more than the top 2 amino acids, which is the current script default function, they would need to adjust the visual.py script accordingly as well. 
-        * User can modify this feature in line 518 of the 'main.py' script within the ***get_cluster_filenames*** function. 
+        * User can modify this feature by modifying the first line within the ***get_cluster_filenames*** function in the 'main.py' script. 
         
         ```
-        fmt_letters_list = list(map(lambda x : format_common_letters(x, num=2), common_letters_list))
+        def get_cluster_filenames(args, common_letters_list):
+            fmt_letters_list = list(map(lambda x : format_common_letters(x, num=2), common_letters_list))
+            clusters = []
+            for ll in fmt_letters_list:
+                top_letters = list(map(lambda x: x[0], ll))
+                clusters.append("".join(sorted("".join(top_letters))))
+
+            f_clusters = []
+            for cluster_name in clusters:
+                f_cluster = os.path.join(args.out, "clusters", cluster_name + ".csv")
+                f_clusters.append(f_cluster)
+
+            return f_clusters
+
         ```
 
