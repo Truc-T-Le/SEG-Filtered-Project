@@ -298,7 +298,8 @@ python3 visual.py output
             * For Runs containing  x < 500: a = 1.40, b = 145 
             
             * NOTE:
-                * Do not recommand going over 200 sub-sequences at a time if user wants to analyze graphically. Author recommands that the user switch over to analyzing the csv files for better analysis. 
+                * Do not recommand going over 200 sub-sequences at a time if user wants to analyze graphically.
+                Author recommands that the user switch over to analyzing the csv files for better analysis. 
                                            
 * Font size for the text in the graphs can be modify by changing the number within the following line:
                                            
