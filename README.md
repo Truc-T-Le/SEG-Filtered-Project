@@ -130,30 +130,20 @@ Examples:
 
 
 2. The SEG-Filter Algorithm only search for two things in the description line: 
-    1. the string attached to > 
-        * the main.py script will take the first string between the ">" and the first white space or until the end of the description line.
-
-            * ex) ">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3" &#8594; "sp|P31483|TIA1_HUMAN"
+    1. The ">" at the very start of the line. 
         
-            * ex) “>PRNP" becomes “PRNP"
+    2. The first string attached to the ">" symbol. 
+        
+3. The main.py script will take the first string between the ">" and the first white space or until the end of the description line.
+        * The string is use to identify the sequence being analyze.
 
-    2. the string that cames after "family:"
+          
 
 **Example**
 ``` 
- >PRNP [family:prp]
-
- 1. the string attached to > 
-
->PRNP 
-
-the string would be "PRNP"
-
-2. the string that cames after "family:"
-
-[family:prp]
-
-the string would be "prp"
+* ex) ">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3" &#8594; "sp|P31483|TIA1_HUMAN"
+        
+* ex) “>PRNP" &#8594; “PRNP"
 ``` 
 
 <br />
