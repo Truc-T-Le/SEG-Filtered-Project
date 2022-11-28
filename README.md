@@ -140,11 +140,11 @@ Examples:
           
 
 **Example**
-``` 
+
 * ex) ">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3" &#8594; "sp|P31483|TIA1_HUMAN"
         
 * ex) “>PRNP" &#8594; “PRNP"
-``` 
+
 
 <br />
 
