@@ -226,7 +226,7 @@ Python3 main.py inputs
             * <span style="color:red">by_id</span> folder 
             * <span style="color:red">by_overall</span> folder
 
-![Part 2][(https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/0000b2cc1ef0bd0ace29496b82b868cabbff179c/Result2_2.png](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_3.png))
+![Part 2](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/0000b2cc1ef0bd0ace29496b82b868cabbff179c/Result2_2.png](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_3.png))
 
     
 ### **3) `visual.py` and Assest folder**
