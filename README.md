@@ -63,22 +63,12 @@
 #### `visual.py` and assets folder
 
 * This python script functions:
-    * Produce the cluster graphs 
+    * Produce the cluster graphs and two CSVs that summarizes the graphs.
 
     * The assets folder is necessary for the stylaztion of the graphs that the `visual.py` needs to output nice graphs. 
 
 * Purpose:
     * Produce cluster graphs to visualize any significant trends within the dataset. 
-
-#### `statistics.py`
-* This python script functions:
-    * Calculate _Conditional Probabilities_
-
-    * Calculate _Multinomial Distributon_ for each parsed sequence using the known [probability distribution of all amino acids.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7127678/pdf/main.pdf)
-
-
-* Purpose:
-    * Analyze the likelihood of each sequence occuring randomly.
 
 <br />
 
@@ -98,6 +88,8 @@
     * PIL 
     * assets.circlify 
     * matplotlib.pyplot  
+    * csv
+    * shutil
 
 
 ### **Installation** 
@@ -122,34 +114,28 @@
     * `sequence.py`
 
 #### **Formatting SEG Input Files**
-1. The formatting of the description line for FASTA files should follow this specific rule:
+1. The formatting of the description line for FASTA files should follow the conventional FASTA formatting [guidance](https://en.wikipedia.org/wiki/FASTA_format#Description_line) :
 
 **Example**
 ```
 Formatting rule:
->"sequence name" [family:"family it comes from"]
+>"information of the protein"
 
-Example: 
-“>PRNP [family:prp]
+Examples: 
+“>PRNP"
+">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3"
 ```
 
 * Deviation from the above format will result in the main.py script erroring out when running it on the wrongly formatted SEG output .txt files. 
-    * Note:
-        * The users can change the keywords the `main.py` script searches for in the description line when parsing through the seg output files. This can be done by manipulating a few lines of codes within the `main.py` script. 
-        
-        * Any manipulation of the key words within the `main.py` script should also be done in the `statistics.py` script as well. 
 
-2. The descript line contains two important components:
 
-    1. sequence name
-
-    2. the family the sequence comes from. 
-
-3. The SEG-Filter Algorithm only search for two things in the description line: 
+2. The SEG-Filter Algorithm only search for two things in the description line: 
     1. the string attached to > 
-        * if the string is multiple words long then connect the words together with the underscore function.
+        * the main.py script will take the first string between the ">" and the first white space or until the end of the description line.
 
-            * ex) Major histocompatibility antigens needs to become Major_histocompatibility_antigens
+            * ex) ">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3" becomes "sp|P31483|TIA1_HUMAN"
+        
+            * ex) “>PRNP" becomes “PRNP"
 
     2. the string that cames after "family:"
 
