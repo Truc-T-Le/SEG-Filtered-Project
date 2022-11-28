@@ -126,7 +126,7 @@ Examples:
 ">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3"
 ```
 
-* Deviation from the above format will result in the main.py script erroring out when running it on the wrongly formatted SEG output .txt files. 
+* Deviation from the above format will result in the main.py script erroring out. 
 
 
 2. The SEG-Filter Algorithm only search for two things in the description line: 
