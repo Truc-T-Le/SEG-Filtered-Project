@@ -215,20 +215,18 @@ Python3 main.py inputs
 * The **output** folder contains three other folders:
     * <span style="color:red">**cluster**</span> folder
         * contains multiple csv files based on the top n amino acids component within each LCR sub-sequence. 
-        * This example looks at top 2 most abundant amino acids within each LCR sub-sequence.
+        * This example looks at the top 2 most abundant amino acids within each LCR sub-sequence.
         ![example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/cluster.png) 
     * <span style="color:red">**graphs**</span> folder
-        * Contains 3 addtional folders:
-            * <span style="color:red">by_family</span> folder
+        * Contains 2 addtional folders:
             * <span style="color:red">by_id</span> folder 
             * <span style="color:red">by_overall</span> folder
     * <span style="color:red">**sequences**</span> folder 
-        * Contains 3 additional folders:
-            * <span style="color:red">by_family</span> folder
+        * Contains 2 additional folders:
             * <span style="color:red">by_id</span> folder 
             * <span style="color:red">by_overall</span> folder
 
-![Part 2](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/0000b2cc1ef0bd0ace29496b82b868cabbff179c/Result2_2.png)
+![Part 2][(https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/0000b2cc1ef0bd0ace29496b82b868cabbff179c/Result2_2.png](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_3.png))
 
     
 ### **3) `visual.py` and Assest folder**
