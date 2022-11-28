@@ -299,7 +299,7 @@ python3 visual.py output
             
             * NOTE:
                 * Do not recommand going over 200 sub-sequences at a time if user wants to analyze graphically.
-                Author recommands that the user switch over to analyzing the csv files for better analysis. 
+                  Author recommands that the user switch over to analyzing the csv files for better analysis. 
                                            
 * Font size for the text in the graphs can be modify by changing the number within the following line:
                                            
