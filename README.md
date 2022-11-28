@@ -191,9 +191,9 @@ rm -v **/.ds
 
 ### **2) `main.py`**
 
-* Run the `main.py` on the same directory level as the SEG output folder. 
+* Run the `main.py` on the same directory level as the folder contaning the SEG .txt files. 
 
-![example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/18223f062bc46f153c2c2d9007d1217f163b595a/Example2.png)
+![example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_1.png)
 
 ***Code***
 ```
@@ -201,20 +201,22 @@ Generic:
 Python3 main.py "input folder"
 
 Example:
-Python3 main.py seg_output
+Python3 main.py inputs
 ```
 
 **Results**
 
 * Running the `main.py` script will output a folder called <span style="color:red">**output**</span>.
 
-![Part 1](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/0000b2cc1ef0bd0ace29496b82b868cabbff179c/Result2_1.png) 
+![Part 1](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_2.png) 
 
 <br />
 
 * The **output** folder contains three other folders:
     * <span style="color:red">**cluster**</span> folder
-        * contains multiple csv files based on the top n amino acids component within each sequence. 
+        * contains multiple csv files based on the top n amino acids component within each LCR sub-sequence. 
+        * This example looks at top 2 most abundant amino acids within each LCR sub-sequence.
+        ![example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/cluster.png) 
     * <span style="color:red">**graphs**</span> folder
         * Contains 3 addtional folders:
             * <span style="color:red">by_family</span> folder
