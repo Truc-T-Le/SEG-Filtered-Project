@@ -38,8 +38,8 @@ def get_meta(line):
     assert(line[0] == '>')
     
 
-    # Look for the string between > and the first whitespace
-    search_object = re.search(r'(?<=\>).+?(?=\s)', line)
+    # Look for the string between > and the first whitespace or till end of string
+    search_object = re.search(r'(?<=\>).*?(?=\s+|$)', line)
     assert(search_object != None)
     fid = str(search_object.group())
 
