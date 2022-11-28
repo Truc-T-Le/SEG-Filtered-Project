@@ -252,7 +252,7 @@ python3 visual.py output
     * Networks_seq.csv
     * Networks.csv
 
-![Example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/visual.py)
+![Example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/visual_result.png)
 
 ## **Notes**
 
@@ -260,7 +260,8 @@ python3 visual.py output
 * the script can be modified to accomodate the users needs.
     * HOWEVER
         * If the user modified the cluster function to output more than the top 2 amino acids, which is the current script default function, they would need to adjust the visual.py script accordingly as well. 
-        * User can modify this feature in line 518 of the 'main.py' script within the get_cluster_filenames. 
+        * User can modify this feature in line 518 of the 'main.py' script within the ***get_cluster_filenames*** function. 
+        
         ```
         fmt_letters_list = list(map(lambda x : format_common_letters(x, num=2), common_letters_list))
         ```
