@@ -277,7 +277,7 @@ class Network:
 
     def draw(self, network_type):
         # Sizing for the png outputs
-        width = height = int(len(self.group_nodes) ** 1.30) * 120
+        width = height = int(len(self.group_nodes) ** 1.05) * 120
         margin = width / 4
 
         width_start = margin / 2
@@ -324,18 +324,13 @@ class Network:
         return image
 
 def net_counts(name_list, loc_list, net_dict):
+    # outputs csv of sequences and their classfication(s)
+
     for idx, name in enumerate(name_list):
         if name in net_dict:
             net_dict[name].append(loc_list[idx]) # append the element
         else:
             net_dict[name] = [loc_list[idx]]
-    # for keys, values in net_dict.items():
-    #     if len(values) > 1:
-    #         key = list(net_dict.keys())[list(net_dict.values()).index(values)]
-    #         #print("seq")
-    #         print(key, values)
-    #     else:
-    #         continue
 
     df = pd.DataFrame(net_dict.items(), columns = ["Sequence Name", "Classification"])
     df['Classification'] = df['Classification'].astype(str).str[1:-1]
@@ -343,6 +338,8 @@ def net_counts(name_list, loc_list, net_dict):
     net_dict = {}
 
 def net_counts_2(name_list, loc_list, net_dict):
+# outputs csv of different classifications and their corresponding sub-sequences 
+
     for idx, loc in enumerate(loc_list):
         if loc in net_dict:
             net_dict[loc].append(name_list[idx])
