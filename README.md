@@ -135,10 +135,9 @@ Examples:
     2. The first string attached to the ">" symbol. 
         
 3. The main.py script will take the first string between the ">" and the first white space or until the end of the description line.
-        * The string is use to identify the sequence being analyze.
+        * The string is use to identify the protein that the LCR sub-sequence being analyze originated from.
 
-          
-
+         
 **Example**
 
 * ex) ">sp|P31483|TIA1_HUMAN Cytotoxic granule associated RNA binding protein TIA1 OS=Homo sapiens OX=9606 GN=TIA1 PE=1 SV=3" &#8594; "sp|P31483|TIA1_HUMAN"
