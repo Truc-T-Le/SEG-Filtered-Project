@@ -226,17 +226,17 @@ Python3 main.py inputs
             * <span style="color:red">by_id</span> folder 
             * <span style="color:red">by_overall</span> folder
 
-![Part 2](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/0000b2cc1ef0bd0ace29496b82b868cabbff179c/Result2_2.png](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_3.png)
+![Part 2](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_3.png)
 
     
 ### **3) `visual.py` and Assest folder**
 
 * The `visual.py` and the <span style="color:red">**assest**</span> folder should be located in the same directory as the <span style="color:red">**output**</span> folder before you run the `visual.py` script.
     * **Note!!!**: 
-        *  To avoid the `visual.py` python script from erroring out, you need to have the <span style="color:red">**assest**</span> folder in the same directory!!!
+        *  To avoid the `visual.py` python script from erroring out, you need to have the <span style="color:red">**assest**</span> folder in the same directory as both the 'visual.py' and <span style="color:red">**output**</span> folder!!!
 
 
-![Example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/8b03c5586cfee664af3bd658a899a1d887178c37/Example3.png)
+![Example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/seg_result_2.png)
 
 **Code**
 
@@ -246,74 +246,13 @@ python3 visual.py output
 
 **Result**
 
-* Running the `visual.py` script will output 3 clusters graphs:
-    * gc-output.jpg
+* Running the `visual.py` script will output 2 clusters graphs and 2 CSV files:
     * gcs-output.jpg
     * gs-output.jpg
+    * Networks_seq.csv
+    * Networks.csv
 
-![Example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/d45d4273022b219b27a3b26124c4c10664ad4232/Result3_1.png)
-
-
-### **4) `statistics.py`**
-
-* Run the `statistics.py` script in the same directory as the <span style="color:red">**output**</span> folder.
-
-![Example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/5e2ee5cb29ffb3231b2c32d6392b4938c369c529/Example4.png)
-
-**Code**
-
-```
-python3 statistics.py output
-```
-
-**Result**
-
-* Running the `statistics.py` script will output a folder called <span style="color:red">**probability**</span> in the <span style="color:red">**output**</span> folder. 
-
-![Example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/399f946a89688ae73faf44f501c68440007b3492/Result4.png)
-
-* The <span style="color:red">**probability**</span> folder contains:
-    * <span style="color:red">**by_family**</span> folder
-        * <span style="color:red">**order_doesn't_matter**</span> folder
-        
-        * <span style="color:red">**order_does_matter**</span> folder
-            
-    * <span style="color:red">**by_id**</span> folder
-        * <span style="color:red">**order_doesn't_matter**</span> folder
-
-        * <span style="color:red">**order_does_matter**</span> folder
-
-    * <span style="color:red">**by_overall**</span> folder
-        * <span style="color:red">**order_doesn't_matter**</span> folder
-
-        * <span style="color:red">**order_does_matter**</span> folder
-
-    * `multinomial.csv` 
-
-![Example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/399f946a89688ae73faf44f501c68440007b3492/Result4_2.png)
-
-![Example](https://github.com/Truc-T-Le/SEG-Algorithm-Project/blob/399f946a89688ae73faf44f501c68440007b3492/Result4_3.png)
-
-**Notes**
-* <span style="color:red">**order_doesn't_matter**</span> folder: 
-    * Neglect the positional ordering of the amino acids within the pairings.
-        * Ex) AT and TA are consider the same pairing of amino acids,
-
-    * Recorded counts of occurance for each possible pairing of amino acids.
-
-    * Calculated the conditional probability for each possible pairs of amino acids. 
-
-
-* <span style="color:red">**order_does_matter**</span> folder: 
-    * Take into consideration the positional ordering of the amino acids within the pairings.
-        * EX) AT and TA are consider unique pairings of amino acids.
-
-    * Recorded counts of occurance foe each unique possible pairing of amino acids.
-    
-    * Calculated the conditional probability for each unique possible pairing of amino acids.
-
-* The calculated conditonal probabilities can be useful for constructing a _Hidden Markov's Model_ to calculate the likeliness of each sequence occuring. 
-
+![Example](https://github.com/Truc-T-Le/SEG-Filtered-Project/blob/main/visual.py)
 
 ## **Notes**
 
@@ -321,8 +260,8 @@ python3 statistics.py output
 * the script can be modified to accomodate the users needs.
     * HOWEVER
         * If the user modified the cluster function to output more than the top 2 amino acids, which is the current script default function, they would need to adjust the visual.py script accordingly as well. 
+        * User can modify this feature in line 518 of the 'main.py' script within the get_cluster_filenames. 
+        '''
+        fmt_letters_list = list(map(lambda x : format_common_letters(x, num=2), common_letters_list))
+        '''
 
-### The statistics.py script 
-* This script can only calculate the conditional probabilities of two amino acids pairings (2 events).
-
-* As of July 6th, 2021, the author does not have the require mathematic knowledge to construct an algorithm that calculates the conditional probabilities with multiple conditions. (She probably can, but is currently refusing to accept the harsh reality.)
