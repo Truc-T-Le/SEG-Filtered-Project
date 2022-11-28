@@ -285,16 +285,20 @@ python3 visual.py output
 
 ### The visual.py script
 * The size of the graph outputted by the 'visual.py' script can be change by modifyng the following line of code within the def draw() within the Network class:
+        
         ```
         width = height = int(len(self.group_nodes) ** a) * b
         ```
-        * Recommended sizing: 
+        
+        * Recommended sizing:
+        
             * For Runs containing >50 LCR sub-sequence: a = 1.05, b = 120
             * For Runs containing 50 < x < 100: a = 1.15, b = 120
             * For Runs containing 100 < x < 150: a = 1.20, b = 125
             * For Runs containing  x < 500: a = 1.40, b = 145 
                                            
 * Font size for the text in the graphs can be modify by changing the number within the following line:
+                                           
           ```
           font = ImageFont.truetype("assets/Roboto-Light.ttf", 30)      
           ```
