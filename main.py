@@ -617,7 +617,7 @@ def write_line_csv(filepaths, fid, fmt_letters, strings, ranges, criteria, verbo
             for index, letter_dat in enumerate(fmt_letters):
                 writer = csv.writer(outfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 ranges_str = ",".join(ranges[index])
-                fid_indx = "{}.{}".format(fid, index)
+                fid_indx = "{}.{}".format(fid, index + 1)
                 row = [item for sublist in letter_dat for item in sublist]
                 writer.writerow([fid_indx, strings[index], ranges_str, criteria[index]] + row)
 
@@ -659,7 +659,7 @@ def write_cluster_line_csv(filepaths, fid, fmt_letters, strings, ranges, criteri
         with open(filepath, 'a+', newline='') as outfile:
             writer = csv.writer(outfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             ranges_str = ",".join(ranges[index])
-            fid_indx = "{}.{}".format(fid, index)
+            fid_indx = "{}.{}".format(fid, index + 1)
             row = [item for sublist in fmt_letters[index] for item in sublist]
             writer.writerow([fid_indx, strings[index], ranges_str, criteria[index]] + row)
 
@@ -702,7 +702,7 @@ def write_summary_line_csv(filepaths, fid, data, verbose=False):
                     writer = csv.writer(outfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                     row = [item for sublist in letter_dat for item in sublist]
 
-                    fid_indx = "{}.{}".format(fid, index)
+                    fid_indx = "{}.{}".format(fid, index + 1)
                     row = [fid_indx] + row 
                     writer.writerow(row)
 
